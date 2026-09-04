@@ -41,7 +41,7 @@ body {
 }
 
 /* ===== PRELOADER ===== */
-.preloader {
+#preloader {
     position: fixed;
     top: 0;
     left: 0;
@@ -53,12 +53,17 @@ body {
     align-items: center;
     justify-content: center;
     z-index: 9999;
-    transition: opacity 0.5s ease, visibility 0.5s ease;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
 }
 
-.preloader.hidden {
-    opacity: 0;
-    visibility: hidden;
+#preloader.hidden,
+#preloader[style*="display: none"] {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
 }
 
 .horse-spinner {
